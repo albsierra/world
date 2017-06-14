@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "country": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "countrylanguage": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "city": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "language": {
+    "dataSource": "mysqlDs",
+    "public": true
+  }
+}

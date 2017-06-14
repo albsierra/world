@@ -1,0 +1,44 @@
+{
+  "name": "countrylanguage",
+  "plural": "countrieslanguages",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CountryCode": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "languageId": {
+      "type": "number",
+      "id": true,
+      "required": true
+    },
+    "IsOfficial": {
+      "type": "string",
+      "required": true
+    },
+    "Percentage": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "language": {
+      "type": "belongsTo",
+      "model": "language",
+      "foreignKey": "languageId"
+    },
+    "country": {
+      "type": "belongsTo",
+      "model": "country",
+      "foreignKey": "CountryCode"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

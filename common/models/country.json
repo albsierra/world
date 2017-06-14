@@ -1,0 +1,80 @@
+{
+  "name": "country",
+  "plural": "countries",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Code": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Continent": {
+      "type": "string",
+      "required": true
+    },
+    "Region": {
+      "type": "string",
+      "required": true
+    },
+    "SurfaceArea": {
+      "type": "number",
+      "required": true
+    },
+    "IndepYear": {
+      "type": "number"
+    },
+    "Population": {
+      "type": "number",
+      "required": true
+    },
+    "GNP": {
+      "type": "number"
+    },
+    "GNPOld": {
+      "type": "string"
+    },
+    "GovernmentForm": {
+      "type": "string",
+      "required": true
+    },
+    "HeadOfState": {
+      "type": "string"
+    },
+    "Capital": {
+      "type": "number"
+    },
+    "Code2": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "countrylanguages": {
+      "type": "hasMany",
+      "model": "countrylanguage",
+      "foreignKey": "CountryCode"
+    },
+    "cities": {
+      "type": "hasMany",
+      "model": "city",
+      "foreignKey": "CountryCode"
+    },
+    "languages": {
+      "type": "hasMany",
+      "model": "language",
+      "foreignKey": "CountryCode",
+      "through": "countrylanguage"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

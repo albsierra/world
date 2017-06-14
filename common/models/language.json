@@ -1,0 +1,31 @@
+{
+  "name": "language",
+  "plural": "languages",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Language": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "countrylanguages": {
+      "type": "hasMany",
+      "model": "countrylanguage",
+      "foreignKey": "languageId"
+    },
+    "countries": {
+      "type": "hasMany",
+      "model": "country",
+      "foreignKey": "languageId",
+      "through": "countrylanguage"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
