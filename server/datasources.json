@@ -6,7 +6,7 @@
     "database": "world",
     "password": "alumno",
     "name": "mysqlDs",
-    "user": "alumno",
+    "user": "root",
     "connector": "mysql"
   }
 }
